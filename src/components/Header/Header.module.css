@@ -1,0 +1,15 @@
+.header {
+    grid-area: h;
+    background-color: rgb(142, 223, 255);
+}
+.header img {
+    width: auto;
+    height: 40px;
+}
+.loginContainer {
+    float: right;
+}
+.loginContainer a {
+    color: #222222;
+    text-decoration: none;
+}

@@ -1,0 +1,7 @@
+.paginator span {
+    margin: 5px;
+    cursor: pointer;
+}
+.paginator .pageActive {
+    color: #ff0000;
+}
