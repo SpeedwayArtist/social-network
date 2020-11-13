@@ -82,9 +82,13 @@ export const getUserStatus = (userId) => async (dispatch) => {
     dispatch(setUserStatus(responseData));
 }
 export const updateUserStatus = (status) => async (dispatch) => {
-    const responseData = await profileAPI.updateStatus(status);
-    if (responseData.resultCode === 0) {
-        dispatch(setUserStatus(status));
+    try {
+        const responseData = await profileAPI.updateStatus(status);
+        if (responseData.resultCode === 0) {
+            dispatch(setUserStatus(status));
+        }
+    } catch (error) {
+        alert(error);
     }
 }
 export const setAvatar = (imgFile) => async (dispatch) => {
