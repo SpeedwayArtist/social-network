@@ -29,7 +29,6 @@ class UsersContainer extends React.Component {
     }
 
     render() {
-        console.log('render');
         return (
             <>
                 {this.props.isFetching ? <Preloader /> : null}
@@ -41,6 +40,7 @@ class UsersContainer extends React.Component {
                        unfollow={this.props.unfollow}
                        follow={this.props.follow}
                        followingInProgress={this.props.followingInProgress}
+                       isAuth={this.props.isAuth}
                        />
             </>
         );
@@ -54,7 +54,8 @@ const mapStateToProps = (state) => {
         totalUsersCount: getTotalUsersCount(state),
         currentPage: getCurrentPage(state),
         isFetching: getIsFetching(state),
-        followingInProgress: getFollowingInProgress(state)
+        followingInProgress: getFollowingInProgress(state),
+        isAuth: state.auth.isAuth
     }
 }
 const mapDispatchToProps = {follow, unfollow, setFollowingInProgress, requestUsers};

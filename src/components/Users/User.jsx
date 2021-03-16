@@ -3,10 +3,12 @@ import css from './User.module.css';
 import avatarPlaceholder from '../../assets/images/user_avatar_placeholder.svg';
 import {NavLink} from 'react-router-dom';
 
-const User = ({user, followingInProgress, unfollow, follow}) => {
+const User = ({user, followingInProgress, unfollow, follow, isAuth}) => {
+    console.log(isAuth);
     return (
         <div className={css.userItem}>
-            {user.followed
+            {isAuth &&
+            (user.followed
                 ? <button disabled={followingInProgress.some(id => id === user.id)}
                           onClick={() => {
                               unfollow(user.id)
@@ -14,7 +16,8 @@ const User = ({user, followingInProgress, unfollow, follow}) => {
                 : <button disabled={followingInProgress.some(id => id === user.id)}
                           onClick={() => {
                               follow(user.id)
-                          }}>Follow</button>}
+                          }}>Follow</button>
+            )}
             <NavLink to={'/profile/' + user.id}>
                 <img src={user.photos.small != null ? user.photos.small : avatarPlaceholder} alt=''/>
             </NavLink>

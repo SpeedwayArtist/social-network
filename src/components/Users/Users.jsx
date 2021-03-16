@@ -9,9 +9,13 @@ const Users = ({currentPage, totalUsersCount, pageSize, onPageChanged, users, ..
                        pageSize={pageSize}/>
             <div>
                 {
-                    users.map(user => <User user={user} followingInProgress={props.followingInProgress}
+                    users.map(user => <User key={user.id}
+                                            user={user}
+                                            followingInProgress={props.followingInProgress}
                                             unfollow={props.unfollow}
-                                            follow={props.follow}/>)
+                                            follow={props.follow}
+                                            isAuth={props.isAuth}
+                    />)
                 }
             </div>
         </>

@@ -40,6 +40,7 @@ const Login = (props) => {
     }
 
     if (props.isAuth) {
+        console.log('profile');
         return <Redirect to={'profile'}/>
     }
 
