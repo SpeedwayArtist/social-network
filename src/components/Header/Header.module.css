@@ -1,15 +1,37 @@
 .header {
     grid-area: h;
-    background-color: rgb(142, 223, 255);
+    background-color: #4f5d73;
+    padding: 0 20px;
+    color: #fafafa;
+}
+.header h1 {
+    float: left;
+    margin: 5px 0;
+    font-size: 2rem;
+    font-weight: 400;
 }
 .header img {
     width: auto;
     height: 40px;
 }
 .loginContainer {
+    margin-top: 19px;
     float: right;
 }
 .loginContainer a {
-    color: #222222;
+    color: #fafafa;
     text-decoration: none;
+}
+.loginContainer a:hover {
+    text-decoration: underline;
+}
+.loginContainer button {
+    background: transparent;
+    outline: none;
+    border: none;
+    font-size: 1rem;
+    font-weight: 600;
+    color: #fafafa;
+    text-decoration: underline;
+    cursor: pointer;
 }

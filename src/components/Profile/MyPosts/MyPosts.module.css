@@ -1,6 +1,8 @@
 .postsContainer {
-    padding: 15px;
+    padding: 25px;
+    margin-top: 40px;
+    border-top: 1px solid #333;
 }
 .postsItems {
-    padding-top: 35px;
+    padding-top: 15px;
 }

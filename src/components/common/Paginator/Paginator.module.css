@@ -1,7 +1,18 @@
+.paginator {
+    padding-top: 15px;
+    margin-top: 40px;
+    border-top: 1px solid #333;
+    text-align: center;
+}
 .paginator .page {
     margin: 5px;
     cursor: pointer;
 }
 .paginator .pageActive {
-    color: #ff0000;
+    font-weight: 700;
+    cursor: default;
+}
+.paginator button {
+    padding: 5px 15px;
+    margin: 0 10px;
 }

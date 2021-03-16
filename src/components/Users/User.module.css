@@ -1,7 +1,38 @@
+.userItem {
+    padding: 13px 20px 9px;
+    position: relative;
+}
+.userItem:nth-child(odd) {
+    background-color: #f6f7ff;
+}
+.userItem:hover, .userItem:nth-child(odd):hover {
+    background-color: #eff2fb;
+}
 .userItem img {
     width: 80px;
     height: auto;
 }
-.userItem span {
-    padding: 0 15px;
+.userItem button {
+    padding: 5px 10px;
+    display: block;
+    position: absolute;
+    top: 10px;
+    right: 10px;
+}
+.userAvatarContainer {
+    margin-right: 20px;
+    float: left;
+}
+.userAvatarContainer a {
+    display: inline-block;
+    line-height: 0;
+}
+.field {
+    padding-top: 2px;
+}
+.fieldTitle {
+    font-weight: 500;
+}
+.clear {
+    clear: both;
 }

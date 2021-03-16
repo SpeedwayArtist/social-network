@@ -29,12 +29,14 @@ const ProfileInfo = ({isOwner, profile, status, updateUserStatus, setAvatar, sav
 
     return (
         <div>
-            <div className={css.avatar}>
-                <img
-                    src={profile.photos.large ? profile.photos.large : 'https://upload.wikimedia.org/wikipedia/commons/7/7e/Circle-icons-profile.svg'}
-                    alt=''/>
+            <div className={css.avatarContainer}>
+                <div className={css.avatar}>
+                    <img
+                        src={profile.photos.large ? profile.photos.large : 'https://upload.wikimedia.org/wikipedia/commons/7/7e/Circle-icons-profile.svg'}
+                        alt=''/>
+                </div>
+                {isOwner && <input type={'file'} onChange={onMainAvatarSelected}/>}
             </div>
-            {isOwner && <input type={'file'} onChange={onMainAvatarSelected}/>}
             <ProfileStatusWithHooks status={status} updateUserStatus={updateUserStatus}/>
             {isEditMode
                 ? <ProfileDataForm profile={profile} initialValues={profile} onSubmit={onSubmit} deactivateEditMode={deactivateEditMode}/>
@@ -45,25 +47,25 @@ const ProfileInfo = ({isOwner, profile, status, updateUserStatus, setAvatar, sav
 
 const ProfileData = ({profile, isOwner, activateEditMode}) => {
     return <div>
-        <div>
+        <div className={css.profileField}>
             <b>Full name:</b> {profile.fullName}
         </div>
-        <div>
+        <div className={css.profileField}>
             <b>Open to work:</b> {profile.lookingForAJob ? 'yes' : 'no'}
         </div>
         {profile.lookingForAJob &&
-        <div>
+        <div className={css.profileField}>
             <b>Looking for position:</b> {profile.lookingForAJobDescription}
         </div>}
-        <div>
+        <div className={css.profileField}>
             <b>About me:</b> {profile.aboutMe}
         </div>
-        <div>
+        <div className={css.profileField}>
             <b>Contacts:</b> {Object.keys(profile.contacts).map(key => {
             return <Contacts key={key} contactTitle={key} contactValue={profile.contacts[key]}/>
         })}
         </div>
-        {isOwner && <button type={'button'} onClick={activateEditMode}>Edit</button>}
+        {isOwner && <button className={css.editBtn} type={'button'} onClick={activateEditMode}>Edit</button>}
     </div>
 }
 

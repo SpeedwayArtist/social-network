@@ -1,6 +1,9 @@
 .header img {
     width:100%;
 }
+.avatarContainer {
+    margin-bottom: 15px;
+}
 .avatar {
     width: 150px;
     height: 150px;
@@ -11,5 +14,12 @@
     height: 100%;
 }
 .contacts {
-    padding-left: 25px;
+    padding: 2px 0 2px 25px;
+}
+.profileField {
+    padding: 2px 0;
+}
+.editBtn {
+    padding: 5px 15px;
+    margin-top: 15px;
 }

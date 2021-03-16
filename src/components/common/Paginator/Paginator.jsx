@@ -23,6 +23,9 @@ const Paginator = ({totalItemsCount, pageSize, currentPage, onPageChanged, porti
             .map(num => {
             return (
                 <span onClick={(e) => {
+                    if (currentPage === num) {
+                        return false;
+                    }
                     onPageChanged(num)
                 }}
                       className={cn(css.page, {[css.pageActive]: currentPage === num})}

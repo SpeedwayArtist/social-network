@@ -1,5 +1,9 @@
 .item {
-    color: #f00;
+    padding: 10px 0;
+    border-top: 1px solid #333;
+}
+.item:first-child {
+    border-top: none;
 }
 .item img {
     width: auto;

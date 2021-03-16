@@ -9,7 +9,7 @@ const FormControl = ({input, meta: {touched, error}, children, ...props}) => {
             <div>
                 {React.cloneElement(children, {...input, ...props})}
             </div>
-            {isError && <span>{error}</span>}
+            {isError && <span className={css.errorMsg}>{error}</span>}
         </div>
     );
 }
@@ -24,7 +24,12 @@ export const Input = (props) => {
 }
 
 export const createField = (placeholder, name, validators, component, props = {}, text = '') => {
-    return <div>
-        <Field component={component} name={name} placeholder={placeholder} validate={validators} {...props} />{text}
+    return <div className={props.type ? css[props.type] + " " + css.formFieldWrapper : css.formFieldWrapper}>
+        {text &&
+            <div className={css.formFieldText}>
+                {text}
+            </div>
+        }
+        <Field className={css.formField} component={component} name={name} placeholder={placeholder} validate={validators} {...props} />
     </div>
 }

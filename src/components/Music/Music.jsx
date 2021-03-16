@@ -4,7 +4,9 @@ import css from './Music.module.css';
 const Music = (props) => {
     return (
         <div>
-            Music
+            <h1>
+                Page 'Music' under construction
+            </h1>
         </div>
     );
 }

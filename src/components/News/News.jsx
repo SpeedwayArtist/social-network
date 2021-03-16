@@ -3,9 +3,9 @@ import css from './News.module.css';
 
 const News = (props) => {
     return (
-        <div>
-            News
-        </div>
+        <h1>
+            Page 'News' under construction
+        </h1>
     );
 }
 

@@ -6,7 +6,8 @@ import {compose} from "redux";
 import {createField, Input} from "../common/FormsControls/FormsControls";
 import {required} from "../../utils/validators/validators";
 import {Redirect} from "react-router-dom";
-import css from '../common/FormsControls/FormsControls.module.css';
+import formCss from '../common/FormsControls/FormsControls.module.css';
+import css from './Login.module.css';
 
 const LoginForm = ({handleSubmit, error, captchaUrl}) => {
     return (
@@ -17,12 +18,12 @@ const LoginForm = ({handleSubmit, error, captchaUrl}) => {
             {captchaUrl && <img src={captchaUrl} alt={''}/>}
             {captchaUrl && createField('Enter symbols from captcha', 'captcha', [required], Input)}
             {error &&
-            <div className={css.formSummaryError}>
+            <div className={formCss.formSummaryError}>
                 {error}
             </div>
             }
             <div>
-                <button>Login</button>
+                <button className={formCss.formButton}>Login</button>
             </div>
         </form>
     );
@@ -45,9 +46,11 @@ const Login = (props) => {
     }
 
     return (
-        <div>
-            <h1>Login</h1>
-            <LoginReduxForm onSubmit={onSubmit} captchaUrl={props.captchaUrl}/>
+        <div className={css.container}>
+            <div className={css.form}>
+                <h1>Login</h1>
+                <LoginReduxForm onSubmit={onSubmit} captchaUrl={props.captchaUrl}/>
+            </div>
         </div>
     );
 }

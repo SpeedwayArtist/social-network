@@ -3,9 +3,9 @@ import css from './Settings.module.css';
 
 const Settings = (props) => {
     return (
-        <div>
-            Settings
-        </div>
+        <h1>
+            Page 'Settings' under construction
+        </h1>
     );
 }
 

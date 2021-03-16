@@ -1,15 +1,21 @@
 .nav {
     grid-area: n;
-    background-color: rgb(142, 255, 231);
-    padding: 15px 0 15px 15px;
+    padding: 20px 0;
+    background-color: #f0f0f0;
 }
 .item {
     margin-bottom: 5px;
 }
 .item a {
+    padding: 5px 5px 5px 20px;
+    display: block;
     color: #424242;
     text-decoration: none;
 }
+.item a:hover {
+    background-color: #f9f9f9;
+}
 .item a.active {
-    color: #e06d6d;
+    font-weight: 500;
+    background-color: #fff;
 }
