@@ -4,7 +4,6 @@ import avatarPlaceholder from '../../assets/images/user_avatar_placeholder.svg';
 import {NavLink} from 'react-router-dom';
 
 const User = ({user, followingInProgress, unfollow, follow, isAuth}) => {
-    console.log(isAuth);
     return (
         <div className={css.userItem}>
             {isAuth &&
