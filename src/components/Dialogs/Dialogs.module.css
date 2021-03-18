@@ -1,18 +1,28 @@
 .dialogs {
     display: grid;
     grid-template-columns: 2fr 10fr;
+    min-height: 100%;
 }
 .dialogsItems {
     padding: 15px;
+    border-right: 1px solid #333;
 }
 .dialog {
     padding-bottom: 5px;
 }
+.dialog a {
+    color: #333;
+    text-decoration: none;
+}
+.dialog a:hover {
+    text-decoration: underline;
+}
 .dialog a.active {
-    color: red;
+    font-weight: 500;
 }
 .messages {
-    padding: 15px;
+    padding: 15px 15px;
+    background-color: #f6f7ff;
 }
 .message {
     padding-bottom: 5px;
@@ -21,4 +31,10 @@
     display: grid;
     grid-template-columns: 1fr 80px 2fr;
     grid-template-rows: 50px;
+    border-top: 1px solid #333;
+    padding: 20px 15px;
+}
+.textArea {
+    width: 90%;
+    min-height: 44px;
 }
